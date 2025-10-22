@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "149275550549",
+    "project_id": "tiendacomputacion",
+    "storage_bucket": "tiendacomputacion.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149275550549:android:21edeb5ab21eb287ab85dc",
+        "android_client_info": {
+          "package_name": "com.example.tiendacomputacion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBApLMEJBtkFD4xDo_2DEqHb6ybwtIu9qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
