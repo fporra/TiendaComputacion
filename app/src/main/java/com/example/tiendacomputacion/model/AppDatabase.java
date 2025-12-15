@@ -1,13 +1,11 @@
-package com.example.tiendacomputacion;
+package com.example.tiendacomputacion.model;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import android.content.Context;
 
-import com.example.tiendacomputacion.model.Producto;
-
-@Database(entities = {Producto.class}, version = 1)
+@Database(entities = {Producto.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ProductoDao productoDao();
 

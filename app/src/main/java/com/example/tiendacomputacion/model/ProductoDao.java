@@ -1,4 +1,4 @@
-package com.example.tiendacomputacion;
+package com.example.tiendacomputacion.model;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -6,13 +6,11 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.tiendacomputacion.model.Producto;
-
 import java.util.List;
 
 @Dao
 public interface ProductoDao {
-    @Query("SELECT * FROM productos")
+    @Query("SELECT * FROM producto")
     List<Producto> getAll();
 
     @Insert

@@ -1,4 +1,4 @@
-package com.example.tiendacomputacion;
+package controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tiendacomputacion.adapter.ProductoAdapter;
+import view.adapter.ProductoAdapter;
+
+import com.example.tiendacomputacion.R;
+import com.example.tiendacomputacion.model.AppDatabase;
 import com.example.tiendacomputacion.model.Producto;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;

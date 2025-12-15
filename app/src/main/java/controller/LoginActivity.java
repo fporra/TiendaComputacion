@@ -1,4 +1,4 @@
-package com.example.tiendacomputacion;
+package controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,42 +8,48 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tiendacomputacion.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RegisterActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
 
-        EditText email = findViewById(R.id.email_register);
-        EditText password = findViewById(R.id.password_register);
-        Button register = findViewById(R.id.register_button);
+        EditText email = findViewById(R.id.email);
+        EditText password = findViewById(R.id.password);
+        Button login = findViewById(R.id.login);
+        Button register = findViewById(R.id.register);
 
-        register.setOnClickListener(v -> {
+        login.setOnClickListener(v -> {
             String emailString = email.getText().toString();
             String passwordString = password.getText().toString();
 
             if (emailString.isEmpty() || passwordString.isEmpty()) {
-                Toast.makeText(RegisterActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            mAuth.createUserWithEmailAndPassword(emailString, passwordString)
+            mAuth.signInWithEmailAndPassword(emailString, passwordString)
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             finish();
                         } else {
-                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     });
+        });
+
+        register.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
     }
 }

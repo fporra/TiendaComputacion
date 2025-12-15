@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS productos (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    nombre VARCHAR(255) NOT NULL,
+
+    descripcion TEXT,
+
+    precio DECIMAL(10, 2) NOT NULL,
+
+    imagen VARCHAR(500),
+
+    stock INT NOT NULL DEFAULT 0
+
+);
+
+
+-- Crear tabla pedidos (para integrar con Firebase auth, usando UID de usuario)
+
+CREATE TABLE IF NOT EXISTS pedidos (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    usuario_id VARCHAR(255) NOT NULL,  -- UID de Firebase para identificar al usuario
+
+    producto_id INT NOT NULL,
+
+    cantidad INT NOT NULL,
+
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE
+
+);
+
+
+
+
+INSERT INTO productos (nombre, descripcion, precio, imagen, stock) VALUES
+
+('Laptop Dell', 'Laptop de 15 pulgadas con procesador Intel i5', 1200.00, 'https://example.com/laptop.jpg', 10),
+
+('Mouse Logitech', 'Mouse inalámbrico ergonómico', 25.50, 'https://example.com/mouse.jpg', 50),
+
+('Teclado Mecánico', 'Teclado RGB con switches mecánicos', 80.00, 'https://example.com/teclado.jpg', 20);

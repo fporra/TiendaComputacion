@@ -1,4 +1,4 @@
-package com.example.tiendacomputacion;
+package controller;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,7 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tiendacomputacion.adapter.CarritoAdapter;
+import view.adapter.CarritoAdapter;
+
+import com.example.tiendacomputacion.R;
+import com.example.tiendacomputacion.model.Carrito;
 import com.example.tiendacomputacion.model.Producto;
 
 import java.util.List;

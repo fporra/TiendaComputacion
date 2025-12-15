@@ -1,4 +1,4 @@
-package com.example.tiendacomputacion.adapter;
+package view.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +12,10 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tiendacomputacion.AppDatabase;
-import com.example.tiendacomputacion.Carrito;
-import com.example.tiendacomputacion.EditProductActivity;
-import com.example.tiendacomputacion.ProductoDetalleActivity;
+import com.example.tiendacomputacion.model.AppDatabase;
+import com.example.tiendacomputacion.model.Carrito;
+import controller.EditProductActivity;
+import controller.ProductoDetalleActivity;
 import com.example.tiendacomputacion.R;
 import com.example.tiendacomputacion.model.Producto;
 import com.google.firebase.auth.FirebaseAuth;
